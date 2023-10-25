@@ -69,7 +69,7 @@ char* fromDeci(char result[], int base, int num) {          // Converting intege
 }
 
 char* fromDeciFrac(char result[], int base, double num) {          // Converting integer part of a number from decimal
-    // to given base.
+                                                                  // to given base.
     int i = 0;
     int remainder;
 
