@@ -51,7 +51,7 @@ double toDeciFrac(char *str, int base) {          // Converting fractional part 
 }
 
 char* fromDeci(char result[], int base, int num) {          // Converting integer part of a number from decimal
-    // to given base.
+                                                           // to given base.
     int i = 0;
 
     while (num > 0) {
