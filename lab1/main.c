@@ -2,7 +2,7 @@
 #include <string.h>
 #include <math.h>
 
-int val(char c) {          //Returning value of a char.
+int val(char c) {          // Returning value of a char.
 
     if (c >= '0' && c <= '9')
         return (int) c - '0';
@@ -14,7 +14,7 @@ int val(char c) {          //Returning value of a char.
         return (int) c - 'a' + 10;
 }
 
-char reVal(int num) {
+char reVal(int num) {          // Returning char of value.
 
     if (num >= 0 && num <= 9)
         return (char)(num + '0');
