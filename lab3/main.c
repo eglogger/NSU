@@ -20,7 +20,7 @@ int *preprocess(char *pattern, int patternLen) {
 }
 
 // Using Boyer-Moore algorithm.
-void BoyerMoore(char* text, char* pattern, int textLen, int patternLen) {
+void BoyerMoore(char *text, char *pattern, int textLen, int patternLen) {
 
     int i = patternLen - 1;
     int* table = preprocess(pattern, patternLen);
