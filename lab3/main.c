@@ -2,8 +2,9 @@
 #include <string.h>
 #include <malloc.h>
 
-#define MAX_LEN 16
+#define MAX_LEN (16 + 2)
 
+// Creating table of symbols with information about shifting.
 int *preprocess(char *pattern, int startIndex, int endIndex) {
 
     int *table = malloc((endIndex - startIndex + 1) * sizeof(int));
@@ -17,7 +18,9 @@ int *preprocess(char *pattern, int startIndex, int endIndex) {
     return table;
 }
 
+// Using Boyer-Moore algorithm.
 void BoyerMoore(char* text, char* pattern) {
+
 
     int i = strlen(pattern) - 1;
     int start = ' ';
@@ -46,10 +49,10 @@ void BoyerMoore(char* text, char* pattern) {
 
 int main() {
 
-    char pattern[MAX_LEN + 2];
+    char pattern[MAX_LEN];
     char text[1000];
 
-    fgets(pattern, MAX_LEN + 2, stdin);
+    fgets(pattern, MAX_LEN, stdin);
     fgets(text, 1000, stdin);
 
     pattern[strcspn(pattern, "\n")] = 0;
