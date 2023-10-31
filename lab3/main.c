@@ -21,7 +21,6 @@ int *preprocess(char *pattern, int startIndex, int endIndex) {
 // Using Boyer-Moore algorithm.
 void BoyerMoore(char* text, char* pattern) {
 
-
     int i = strlen(pattern) - 1;
     int start = ' ';
     int end = '~';
