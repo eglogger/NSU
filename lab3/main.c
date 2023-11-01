@@ -2,7 +2,7 @@
 #include <string.h>
 #include <malloc.h>
 
-#define MAX_LEN (16 + 2)
+#define PATTERN_SIZE 18
 #define ALPHABET_SIZE 256
 #define TEXT_SIZE 1000
 
