@@ -4,6 +4,7 @@
 
 #define MAX_LEN (16 + 2)
 #define ALPHABET_SIZE 256
+#define TEXT_SIZE 1000
 
 // Creating table of symbols with information about shifting.
 int *preprocess(char *pattern, int patternLen) {
@@ -49,12 +50,12 @@ void BoyerMoore(char *text, char *pattern, int textLen, int patternLen) {
 int main() {
 
     char pattern[MAX_LEN];
-    char text[1000];
+    char text[TEXT_SIZE];
 
     int textLen, patternLen;
 
     fgets(pattern, MAX_LEN, stdin);
-    fgets(text, 1000, stdin);
+    fgets(text, TEXT_SIZE, stdin);
 
     pattern[strcspn(pattern, "\n")] = 0;
     text[strcspn(text, "\n")] = 0;
