@@ -49,12 +49,12 @@ void BoyerMoore(char *text, char *pattern, int textLen, int patternLen) {
 
 int main() {
 
-    char pattern[MAX_LEN];
+    char pattern[PATTERN_SIZE];
     char text[TEXT_SIZE];
 
     int textLen, patternLen;
 
-    fgets(pattern, MAX_LEN, stdin);
+    fgets(pattern, PATTERN_SIZE, stdin);
     fgets(text, TEXT_SIZE, stdin);
 
     pattern[strcspn(pattern, "\n")] = 0;
