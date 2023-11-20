@@ -99,6 +99,21 @@ LIST *findKey(int key, LIST *L) {
     return 0;
 }
 
+int elCnt(LIST *L) {
+
+    LIST *cur = L;
+    int cnt = 0;
+
+    while (cur -> next) {
+        cur = cur -> next;
+        cnt++;
+    }
+
+    printf("\nElements count: %d", cnt);
+
+    return 0;
+}
+
 int main() {
 
     LIST *L;
@@ -115,30 +130,43 @@ int main() {
         p = create(key, value);
         push(L, p);
     }
+    
+    // Functions tests:
 
     /* print(L);
+    
+    -----
 
     printf("| ");
 
     float t = pop(L);
     printf("%f", t);
     print(L);
+     
+    -----
 
     printf("|");
 
     LIST *cur = L -> next;
     delete(cur);
     print(L);
+     
+    -----
 
     LIST *cur = last(L);
     LIST *now = create(100, 500);
 
-    insert(cur, now); */
+    insert(cur, now);
     print(L);
+     
+    -----
 
     printf("\nInput key:");
     scanf("%d", &key);
-    findKey(key, L);
+    findKey(key, L); */
+
+    print(L);
+    elCnt(L);
 
     return 0;
 }
