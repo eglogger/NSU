@@ -87,6 +87,17 @@ LIST *last(LIST *L) {
     return cur;
 }
 
+LIST *findKey(int key, LIST *L) {
+
+    LIST *cur = L;
+
+    while (key != cur -> key)
+        cur = cur -> next;
+
+    printf("%d: %f", cur -> key, cur -> value);
+
+    return 0;
+}
 
 int main() {
 
@@ -96,7 +107,7 @@ int main() {
     float value;
 
     scanf("%d", &n);
-    
+
     for (int i = 0; i < n; i++) {
         scanf("%d", &key);
         scanf("%f", &value);
@@ -117,13 +128,17 @@ int main() {
 
     LIST *cur = L -> next;
     delete(cur);
-    print(L); */
+    print(L);
 
     LIST *cur = last(L);
     LIST *now = create(100, 500);
 
-    insert(cur, now);
+    insert(cur, now); */
     print(L);
+
+    printf("\nInput key:");
+    scanf("%d", &key);
+    findKey(key, L);
 
     return 0;
 }
