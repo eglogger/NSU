@@ -109,9 +109,36 @@ int elCnt(LIST *L) {
         cnt++;
     }
 
-    printf("\nElements count: %d", cnt);
+    return cnt;
+}
 
-    return 0;
+void delEvenKeys(LIST *L) {
+
+    LIST *cur = L -> next;
+    LIST *last = L;
+
+    while(cur) {
+
+        if (cur -> key % 2 == 0) {
+
+            if (last == L) {
+                L = cur -> next;
+                free(cur);
+                cur = L;
+            }
+
+            else {
+                last -> next = cur -> next;
+                free(cur);
+                cur = last -> next;
+            }
+        }
+        else {
+            last = cur;
+            cur = cur -> next;
+        }
+    }
+    print(L);
 }
 
 int main() {
@@ -130,11 +157,11 @@ int main() {
         p = create(key, value);
         push(L, p);
     }
-    
+
     // Functions tests:
 
     /* print(L);
-    
+
     -----
 
     printf("| ");
@@ -142,7 +169,7 @@ int main() {
     float t = pop(L);
     printf("%f", t);
     print(L);
-     
+
     -----
 
     printf("|");
@@ -150,7 +177,7 @@ int main() {
     LIST *cur = L -> next;
     delete(cur);
     print(L);
-     
+
     -----
 
     LIST *cur = last(L);
@@ -158,15 +185,19 @@ int main() {
 
     insert(cur, now);
     print(L);
-     
+
     -----
 
     printf("\nInput key:");
     scanf("%d", &key);
-    findKey(key, L); */
+    findKey(key, L);
 
     print(L);
     elCnt(L);
+
+    ----- */
+
+    delEvenKeys(L);
 
     return 0;
 }
