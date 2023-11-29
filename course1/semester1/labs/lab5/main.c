@@ -148,7 +148,7 @@ int main() {
         return 0;
     }
 
-    while(opt[i] != '\0' || isEmpty(s_opt) != true) {
+    while (opt[i] != '\0' || isEmpty(s_opt) != true) {
 
         if (opt[i] >= '0' && opt[i] <= '9') {
             tmp = tmp * 10 + opt[i] - '0';
