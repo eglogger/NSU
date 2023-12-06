@@ -4,8 +4,7 @@
 #include <string.h>
 
 #define MAX_LENGTH 1000
-
-#define STACK struct node
+#define STACK struct stack
 
 STACK {
     int data;
@@ -13,10 +12,12 @@ STACK {
 };
 
 void stackInit(STACK **top) { // Stack initialization.
+    
     *top = NULL;
 }
 
 bool isEmpty(STACK *top) { // Checking if stack is empty.
+    
     return (top == NULL) ? true : false;
 }
 
@@ -102,7 +103,7 @@ int check(char *str) { // Checking if input string contains syntax errors.
     if (strlen(str) == 0)
         return 0;
 
-    if (str[0] == '+' || str[0] == '-' || str[0] == '*' || str[0] == '/')
+    if (isOperator(str[0]))
         return 0;
 
     if (isOperator(str[strlen(str) - 1]) == 1)
@@ -124,12 +125,11 @@ int check(char *str) { // Checking if input string contains syntax errors.
         if (str[i] == '(' && str[i + 2] == ')' && isOperator(str[i + 1]) == 1)
             return 0;
 
-        if ((str[i] == '+' || str[i] == '-' ||
-             str[i] == '*' || str[i] == '/') &&
-            (str[i + 1] == '+' || str[i + 1] == '-' ||
-             str[i + 1] == '*' || str[i + 1] == '/'))
+        if (isOperator(str[i]) && isOperator(str[i + 1]))
             return 0;
     }
+
+    return 1;
 }
 
 int main() {
