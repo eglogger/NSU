@@ -13,7 +13,6 @@ TREE {
     TREE* right;
 };
 
-
 TREE* newNode(int key, char* question) {
 
     TREE* node = (TREE*)malloc(sizeof(TREE));
@@ -26,11 +25,10 @@ TREE* newNode(int key, char* question) {
 
     return node;
 }
- void insert(TREE* tree, int key, char* question) {
 
-    TREE* node;
+void insert(TREE* tree, int key, char* question) {
 
-    node = NULL;
+    TREE* node = NULL;
 
     if (tree) {
 
@@ -45,11 +43,11 @@ TREE* newNode(int key, char* question) {
         }
 
         else {
-            insert(tree->right, key, question);
+            insert(tree -> left, key, question);
+            insert(tree -> right, key, question);
         }
     }
-}            insert(tree->left, key, question);
-
+}
 
 void buildTree(FILE* file, char line[], TREE** root) {
 
@@ -64,21 +62,67 @@ void buildTree(FILE* file, char line[], TREE** root) {
 
         if(!*root)
             *root = newNode(key, question);
+
         else
             insert(*root, key, question);
     }
 }
 
+void rebuildTree(FILE* file, TREE* root) {
+
+    if (root == NULL)
+        return;
+
+    if (root -> key)
+        fprintf(file,"%d|%s\n", root -> key, root -> question);
+
+    rebuildTree(file,root -> left);
+    rebuildTree(file,root -> right);
+}
+
 void guessGame(TREE* node) {
 
     char answer[3];
+    char newAnswer[32];
+    char newQuestion[64];
 
-    if (node -> left == NULL && node -> right == NULL) {
+    if (node -> left == NULL && node -> right == NULL && node -> key == 16) {
         printf("%s\n", node -> question);
         return;
     }
 
-    printf("%s (yes/no): ", node -> question);
+    if (node -> left == NULL && node -> right == NULL) {
+
+        printf("%s\nIs it right? (yes/no):", node -> question);
+        gets(answer);
+
+        if (strcmp(answer, "yes") == 0) {
+            printf("Glad to hear that! Thanks for playing :).");
+            return;
+        }
+
+        else if (strcmp(answer, "no") == 0) {
+
+            printf("Hm... What it is then?\nType new answer:");
+            gets(newAnswer);
+
+            printf("Okay! Which question can be answered 'yes' to understand that it`s your new answer, but not my guess?\nType new question:");
+            gets(newQuestion);
+
+            char *tmp = strdup(node -> question);
+
+            strcpy(node -> question, newQuestion);
+
+            node -> left = newNode(node -> key * 2, tmp);
+            node -> right = newNode(node -> key * 2 + 1, newAnswer);
+
+            printf("Thanks, the database has been updated!");
+
+            return;
+        }
+    }
+
+    printf("%s (yes/no):", node -> question);
     gets(answer);
 
     if (strcmp(answer, "yes") == 0)
@@ -111,14 +155,16 @@ int main() {
     file = fopen("data.txt", "r");
 
     if (file == NULL) {
-        printf("Error opening file\n");
+        printf("Error opening file!\n");
         return 0;
     }
 
     buildTree(file, line, &root);
     guessGame(root);
-    fclose(file);
+    file = fopen("data.txt", "w");
+    rebuildTree(file, root);
 
+    fclose(file);
     freeTree(root);
 
     return 0;
