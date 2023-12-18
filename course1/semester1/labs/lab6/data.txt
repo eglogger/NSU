@@ -1,18 +1,17 @@
-40|Is it video editor?
-30|Is it photo editor?
-20|Is it audio editor?
-10|Is it media converter?
-46|Is it Adobe video editor?
-36|Is it Adobe photo editor?
-26|Is it Adobe audio editor?
-16|Is it Adobe media converter?
-44|It is Sony Vegas Pro.
-48|It is Adobe Premier Pro.
-34|It is GIMP.
-38|It is Adobe Photoshop.
-24|It is Audacity.
-28|It is Adobe Audition.
-14|It is Handbrake.
-18|It is Adobe Media Encoder.
-1|I don`t know what are you thinking about :(.
-
+1|Is it video editor?
+2|Is it photo editor?
+3|Is it Adobe video editor?
+4|Is it audio editor?
+5|Is it Adobe photo editor?
+6|It is Sony Vegas Pro.
+7|It is Adobe Premier Pro.
+8|Is it media converter?
+9|Is it Adobe audio editor?
+10|It is GIMP.
+11|It is Adobe Photoshop.
+16|I don`t know what are you thinking about :(.
+17|Is it Adobe media converter?
+18|It is Audacity.
+19|It is Adobe Audition.
+34|It is Handbrake.
+35|It is Adobe Media Encoder.
