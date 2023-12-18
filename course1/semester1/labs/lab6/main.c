@@ -26,34 +26,30 @@ TREE* newNode(int key, char* question) {
 
     return node;
 }
+ void insert(TREE* tree, int key, char* question) {
 
-TREE* insert(TREE* node, int key, char* question) {
+    TREE* node;
 
-    if (node == NULL)
-        return newNode(key, question);
+    node = NULL;
 
-    if (key < node -> key)
-        node -> left = insert(node -> left, key, question);
+    if (tree) {
 
-    else if (key > node->key)
-        node -> right = insert(node -> right, key, question);
+        if (key == tree -> key * 2) {
+            node = newNode(key, question);
+            tree -> left = node;
+        }
 
-    return node;
-}
+        else if (key == tree -> key * 2 + 1) {
+            node = newNode(key, question);
+            tree -> right = node;
+        }
 
-void preorder(TREE *root) {
-
-    if (root == NULL) {
-        printf("Nothing here...");
-        return;
+        else {
+            insert(tree->right, key, question);
+        }
     }
+}            insert(tree->left, key, question);
 
-    printf("%d ", root -> key);
-    printf("%s ", root -> question);
-
-    preorder(root -> left);
-    preorder(root -> right);
-}
 
 void buildTree(FILE* file, char line[], TREE** root) {
 
@@ -66,7 +62,10 @@ void buildTree(FILE* file, char line[], TREE** root) {
         char *question = strdup(token);
         question[strlen(question) - 1] = '\0';
 
-        *root = insert(*root, key, question);
+        if(!*root)
+            *root = newNode(key, question);
+        else
+            insert(*root, key, question);
     }
 }
 
