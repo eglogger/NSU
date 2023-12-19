@@ -2,7 +2,8 @@
 #include <string.h>
 #include <math.h>
 
-int val(char c) {          // Returning value of a char.
+// Returning value of a char.
+int val(char c) {
 
     if (c >= '0' && c <= '9')
         return (int) c - '0';
@@ -14,7 +15,8 @@ int val(char c) {          // Returning value of a char.
         return (int) c - 'a' + 10;
 }
 
-char reVal(int num) {          // Returning char of value.
+// Returning char of value.
+char reVal(int num) {
 
     if (num >= 0 && num <= 9)
         return (char)(num + '0');
@@ -24,7 +26,8 @@ char reVal(int num) {          // Returning char of value.
 
 }
 
-int toDeci(char *str, int base) {          // Converting integer part of a number from given base to decimal.
+// Converting integer part of a number from given base to decimal.
+int toDeci(char *str, int base) {
 
     int power = strlen(str) - 1;
     int num = 0;
@@ -37,7 +40,8 @@ int toDeci(char *str, int base) {          // Converting integer part of a numbe
     return num;
 }
 
-double toDeciFrac(char *str, int base) {          // Converting fractional part of a number from given base to decimal.
+// Converting fractional part of a number from given base to decimal.
+double toDeciFrac(char *str, int base) {
 
     int power = -1;
     double num = 0;
@@ -50,8 +54,9 @@ double toDeciFrac(char *str, int base) {          // Converting fractional part 
     return num;
 }
 
-char* fromDeci(char result[], int base, int num) {          // Converting integer part of a number from decimal
-                                                           // to given base.
+// Converting integer part of a number from decimal to given base.
+char* fromDeci(char result[], int base, int num) {
+    
     int i = 0;
 
     while (num > 0) {
@@ -68,8 +73,9 @@ char* fromDeci(char result[], int base, int num) {          // Converting intege
     return result;
 }
 
-char* fromDeciFrac(char result[], int base, double num) {          // Converting integer part of a number from decimal
-                                                                  // to given base.
+// Converting integer part of a number from decimal to given base.
+char* fromDeciFrac(char result[], int base, double num) {
+    
     int i = 0;
     int remainder;
 
@@ -89,7 +95,8 @@ char* fromDeciFrac(char result[], int base, double num) {          // Converting
     return result;
 }
 
-int check(int base1, int base2, char *str) {          // Checking if input is correct.
+// Checking if input is correct.
+int check(int base1, int base2, char *str) {
 
     int dotCnt = 0;
 
@@ -117,7 +124,8 @@ int check(int base1, int base2, char *str) {          // Checking if input is co
     return 1;
 }
 
-void split(char *str, char *str1, char *str2) {          // Splitting string on integer and fractional part of number.
+// Splitting string on integer and fractional part of number.
+void split(char *str, char *str1, char *str2) {
 
     int dot = 0;
     int m = 0;
