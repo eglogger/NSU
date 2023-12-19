@@ -2,13 +2,15 @@
 #include <stdlib.h>
 #include <string.h>
 
-void swap(char *x, char *y) {          // Swap function.
+// Swap function.
+void swap(char *x, char *y) {
     char temp = *x;
     *x = *y;
     *y = temp;
 }
 
-int check(char *p) {          // Checking if input is correct.
+// Checking if input is correct.
+int check(char *p) {
 
     for (int i = 0; i < strlen(p); i++) {
 
@@ -23,14 +25,16 @@ int check(char *p) {          // Checking if input is correct.
     return 1;
 }
 
-void sortString(char *str, int rem, int len) {          // Sorting string in lexicographic order.
+// Sorting string in lexicographic order.
+void sortString(char *str, int rem, int len) {
     for (int i = rem; i <= len; i++)
         for (int j = i + 1; j <= len; j++)
             if (str[i] > str[j])
                 swap(&str[i], &str[j]);
 }
 
-int nextPermutation(char* str, int len) {          // Generating next permutation.
+// Generating next permutation.
+int nextPermutation(char* str, int len) {
 
     int i = len - 2;
     int j = len - 1;
@@ -49,7 +53,8 @@ int nextPermutation(char* str, int len) {          // Generating next permutatio
     return 1;
 }
 
-void generatePermutations(char *p, int n) {          // Generating N permutations after P.
+// Generating N permutations after P.
+void generatePermutations(char *p, int n) {
 
     char *current = malloc(strlen(p) - 1);
 
