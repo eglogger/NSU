@@ -3,11 +3,12 @@
 #include <string.h>
 
 #define TREE struct tree
+#define MAX_LEN 100
 
 TREE {
 
     int key;
-    char question[100];
+    char question[MAX_LEN];
 
     TREE* left;
     TREE* right;
@@ -49,13 +50,16 @@ void insert(TREE* tree, int key, char* question) {
     }
 }
 
+// Building tree from file.
 void buildTree(FILE* file, char line[], TREE** root) {
 
-    while (fgets(line, 100, file) != NULL) {
+    while (fgets(line, MAX_LEN, file) != NULL) {
 
+        // Taking node key.
         char *token = strtok(line, "|");
         int key = atoi(token);
 
+        // Taking node question.
         token = strtok(NULL, "|");
         char *question = strdup(token);
         question[strlen(question) - 1] = '\0';
@@ -68,6 +72,7 @@ void buildTree(FILE* file, char line[], TREE** root) {
     }
 }
 
+// Rewriting file with new tree.
 void rebuildTree(FILE* file, TREE* root) {
 
     if (root == NULL)
@@ -80,11 +85,12 @@ void rebuildTree(FILE* file, TREE* root) {
     rebuildTree(file,root -> right);
 }
 
+// Guessing word function.
 void guessGame(TREE* node) {
 
     char answer[3];
-    char newAnswer[32];
-    char newQuestion[64];
+    char newAnswer[MAX_LEN];
+    char newQuestion[MAX_LEN];
 
     if (node -> left == NULL && node -> right == NULL && node -> key == 16) {
         printf("%s\n", node -> question);
@@ -106,7 +112,8 @@ void guessGame(TREE* node) {
             printf("Hm... What it is then?\nType new answer:");
             gets(newAnswer);
 
-            printf("Okay! Which question can be answered 'yes' to understand that it`s your new answer, but not my guess?\nType new question:");
+            printf("Okay! Which question can be answered 'yes' to understand "
+                   "that it`s your new answer, but not my guess?\nType new question:");
             gets(newQuestion);
 
             char *tmp = strdup(node -> question);
@@ -140,8 +147,10 @@ void guessGame(TREE* node) {
 void freeTree(TREE* node) {
 
     if (node != NULL) {
+
         freeTree(node -> left);
         freeTree(node -> right);
+
         free(node);
     }
 }
@@ -150,7 +159,7 @@ int main() {
 
     TREE* root = NULL;
     FILE *file;
-    char line[100];
+    char line[MAX_LEN];
 
     file = fopen("data.txt", "r");
 
