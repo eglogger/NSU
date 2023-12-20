@@ -4,7 +4,7 @@ int main() {
 
     float s;
 
-    for (int i = 201; i > 1; i-=2)
+    for (int i = 201; i > 1; i -= 2)
         s = 1 / (s + i);
 
     printf("%f", s);
