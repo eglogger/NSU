@@ -100,7 +100,7 @@
 ### Задание 3.9.
 
 Плотность воздуха убывает с высотой по закону:\
-![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.1.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.1.png)\
 Считая, что\
 ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.2.png)\
 Определить на какой высоте (в метрах) плотность будет меньше 1.
