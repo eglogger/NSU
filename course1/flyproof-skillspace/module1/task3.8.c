@@ -1,12 +1,3 @@
-// В выражение (((1? 2)?3)?4)?5 вместо каждого знака “?” вставить знак одного из четырех арифметических   действий : +, - , * , / так,
-// чтобы результат вычислений равнялся 25.
-
-// 0 - "+"
-// 0 - "-"
-// 0 - "*"
-// 0 - "/"
-
-
 #include <stdio.h>
 
 int main() {
@@ -20,7 +11,7 @@ int main() {
 
                     s = 1;
 
-                    switch (q){
+                    switch (q) {
                         case 0:
                             s += 2;
                             break;
@@ -35,7 +26,7 @@ int main() {
                             break;
                     }
 
-                    switch (w){
+                    switch (w) {
                         case 0:
                             s += 3;
                             break;
@@ -50,7 +41,7 @@ int main() {
                             break;
                     }
 
-                    switch (e){
+                    switch (e) {
                         case 0:
                             s += 4;
                             break;
@@ -65,7 +56,7 @@ int main() {
                             break;
                     }
 
-                    switch (r){
+                    switch (r) {
                         case 0:
                             s += 5;
                             break;
@@ -90,5 +81,4 @@ int main() {
     }
     
     return(0);
-    
 }
