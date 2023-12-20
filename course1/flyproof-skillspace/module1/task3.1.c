@@ -2,10 +2,10 @@
 
 int main() {
     
-    int s=20*20;
+    int s = 20 * 20;
     
-    for (int n=19;n>=1;n--)
-        s-=n*n;
+    for (int n = 19 ; n >= 1; n--)
+        s -= n * n;
     
     printf("%d",s);
     
