@@ -63,7 +63,7 @@
 ### Задание 3.1.
 
 Вычислить значение выражения:\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.1.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.1.png)
 
 ### Задание 3.2.
 
@@ -72,12 +72,12 @@
 ### Задание 3.3.
 
 По заданным x и n, вычислить сумму n слагаемых:\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.3.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.3.png)
 
 ### Задание 3.4.
 
 Вычислите сумму:\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.4.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.4.png)
 
 ### Задание 3.5.
 
@@ -86,12 +86,12 @@
 ### Задание 3.6.
 
 Вычислить:\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.6.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.6.png)
 
 ### Задание 3.7.
 
 Используя метод деления отрезка пополам, найти приближенное (с точностью 0,00001) значение корня уравнения f(x) = 0 на отрезке [a; b].\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.7.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.7.png)
 
 ### Задание 3.8.
 
@@ -100,9 +100,9 @@
 ### Задание 3.9.
 
 Плотность воздуха убывает с высотой по закону:\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.1.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.1.png)
 Считая, что\
- ![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.2.png)
+![](https://github.com/eglogger/NSU/blob/main/course1/flyproof-skillspace/module1/img/3.9.2.png)\
 Определить на какой высоте (в метрах) плотность будет меньше 1.
 
 ### Задание 3.10.
