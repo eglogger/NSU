@@ -1,4 +1,4 @@
-# lab1-0 - Boyer Moore Algorithm
+# lab1-0 - Boyer-Moore Algorithm
     Вход:
         Cтрока 1:
             Jт 1 до 16 символов - шаблон
