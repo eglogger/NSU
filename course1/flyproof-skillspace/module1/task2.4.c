@@ -10,6 +10,7 @@ int main() {
 
     if ((x >= 0 && x < 3) || (x >= 5 && x < 8))
         printf("Green");
+        
     else
         printf("Red");
 
