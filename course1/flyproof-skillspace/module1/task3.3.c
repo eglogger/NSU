@@ -8,8 +8,8 @@ unsigned long long int factorial(long long int num) {
         return num * factorial(num - 1);
 }
 
-int main() 
-{
+int main() {
+    
     int n;
     long long int x;
     double result = 0;
